@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<style>
+    body{
+        background-color: blueviolet;
+    }
+</style>
+<body>
+<h1>Search Purchases</h1>
+<form action="#" data-th-action="@{/PurchaseByCategory}" data-th-object="$
+{categories}" method="post">
+<select id="category" name="category">
+<option value="Select Category">Select Category</option>
+    <option value="shoes">shoes</option>
+    <option value="shocks">shocks</option>
+    <option value="sleepers">sleepers</option>
+    <option value="Heels">Heels</option>
+<option th:each="category : ${categories}" th:value="${category}"
+th:text="${category}"></option>
+</select>
+ <button type="submit" name="action" value="searchByCategory">Search
+Purchases by Category</button>
+</form>
+<form action="#" data-th-action="@{/PurchaseByDate}" data-th-object="$
+{timestamp}" method="post">
+<select id="timestamp" name="timestamp">
+<option value="Select Date">Select Date</option>
+    <option value="2022-08-20">2022-08-20</option>
+    <option value="2022-08-21">2022-08-21</option>
+    <option value="2022-08-22">2022-08-22</option>
+    <option value="2022-08-23">2022-08-23</option>
+<option th:each="ts : ${timestamp}" th:value="${ts}" th:text="$
+{ts}"></option>
+</select>
+ <button type="submit" name="action" value="timestamp">Search Purchases by
+Date</button>
+</form>
+</body>
+</html>

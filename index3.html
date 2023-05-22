@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+    body{
+        background-color: blueviolet;
+    }
+</style>
+<body>
+<h1>List of Users</h1>
+<ul>
+    <li>Kamran</li>
+    <li>Ronny</li>
+    <li>Rohan</li>
+    <li>admin</li>
+    <li>admin1</li>
+</ul>
+<table>
+<tr th:each="user :${users}">
+<td><span th:text="${user.name}"></span></td>
+</tr>
+</table>
+</body>
+</html>
